@@ -1,0 +1,122 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dddfeb;
+  }
+  
+  /* Container */
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background: #1f2847;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading Styles */
+  .heading {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  
+  /* Navigation Styles */
+  .nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 30px;
+    gap: 15px;
+  }
+  
+  .nav ul li {
+    display: block;
+    flex-grow: 1;
+  }
+  
+  .nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #0c80ef;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .nav ul li a:hover {
+    background-color: #0a6bc5;
+  }
+  
+  /* Form Section */
+  .form-section {
+    margin-top: 20px;
+  }
+  
+  .form-section h2 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Workout List */
+  #workout-list {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #2a3457;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  #workout-list div {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #3f4868;
+    border-radius: 5px;
+  }
+  
+  #workout-list div p {
+    margin: 5px 0;
+  }
+  
+  #workout-list div hr {
+    border: none;
+    border-top: 1px solid #a2aace;
+    margin: 10px 0;
+  }
+  
+  @media (max-width: 468px) {
+    .container {
+      min-height: 100vh;
+      max-width: 100%;
+      border-radius: 0;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
