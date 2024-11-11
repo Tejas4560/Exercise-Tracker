@@ -1,10 +1,9 @@
-// Get the workout list from local storage
+
 let workouts = JSON.parse(localStorage.getItem('workouts')) || [];
 
-// Find the div where we want to display the categorized workouts
+
 const workoutListDiv = document.getElementById('workout-list');
 
-// Create objects to store categorized workouts and totals
 const categorizedWorkouts = {
     running: [],
     walking: [],
@@ -12,7 +11,7 @@ const categorizedWorkouts = {
     other: []
 };
 
-// Total counters for each category
+
 const totals = {
     running: { duration: 0, calories: 0 },
     walking: { duration: 0, calories: 0 },
@@ -20,7 +19,7 @@ const totals = {
     other: { duration: 0, calories: 0 }
 };
 
-// Categorize workouts
+
 workouts.forEach((workout, index) => {
     switch (workout.exercise.toLowerCase()) {
         case 'running':
@@ -46,19 +45,19 @@ workouts.forEach((workout, index) => {
     }
 });
 
-// Function to handle deleting a workout
+
 function deleteWorkout(index) {
-    // Remove workout from the array
+    
     workouts.splice(index, 1);
 
-    // Update local storage
+
     localStorage.setItem('workouts', JSON.stringify(workouts));
 
-    // Refresh the page to reflect the changes
+
     window.location.reload();
 }
 
-// Function to display workouts in a specific category
+
 function displayCategory(categoryName, categoryWorkouts, totalDuration, totalCalories) {
     const categoryDiv = document.createElement('div');
     categoryDiv.className = 'category'; // Add a class for styling
@@ -78,7 +77,7 @@ function displayCategory(categoryName, categoryWorkouts, totalDuration, totalCal
             categoryDiv.appendChild(workoutItem);
         });
 
-        // Add totals for this category
+    
         categoryDiv.innerHTML += `
             <p><strong>Total Duration:</strong> ${totalDuration} minutes</p>
             <p><strong>Total Calories Burned:</strong> ${totalCalories}</p>
@@ -91,7 +90,7 @@ function displayCategory(categoryName, categoryWorkouts, totalDuration, totalCal
     workoutListDiv.appendChild(categoryDiv);
 }
 
-// Display each category
+
 displayCategory('Running', categorizedWorkouts.running, totals.running.duration, totals.running.calories);
 displayCategory('Walking', categorizedWorkouts.walking, totals.walking.duration, totals.walking.calories);
 displayCategory('Cycling', categorizedWorkouts.cycling, totals.cycling.duration, totals.cycling.calories);
